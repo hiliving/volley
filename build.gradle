@@ -20,6 +20,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
 
@@ -27,7 +28,10 @@ plugins {
     id "com.github.sherter.google-java-format" version "0.6"
     id "net.ltgt.errorprone" version "0.0.13"
 }
-
+// JitPack Maven
+apply plugin: 'com.github.dcendents.android-maven'
+// Your Group
+group='com.github.hiliving'
 googleJavaFormat {
     toolVersion = '1.5'
     options style: 'AOSP'
@@ -41,6 +45,8 @@ repositories {
         url 'https://maven.google.com/'
         name 'Google'
     }
+    maven { url "https://jitpack.io" }
+
 }
 
 group = 'com.android.volley'
