@@ -327,4 +327,14 @@ public class RequestQueue {
             mFinishedListeners.remove(listener);
         }
     }
+
+    /**
+     * 获取当前请求队列请求数量，判断是否有正在进行的请求
+     * @return
+     */
+    public int getCurrentQueueSize(){
+        synchronized (mNetworkQueue){
+            return mNetworkQueue.size();
+        }
+    }
 }
