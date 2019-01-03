@@ -333,8 +333,8 @@ public class RequestQueue {
      * @return
      */
     public int getCurrentQueueSize(){
-        synchronized (mNetworkQueue){
-            return mNetworkQueue.size();
+        synchronized (mCurrentRequests){
+            return mCurrentRequests.size();
         }
     }
 }
